@@ -3,7 +3,7 @@ use {{ event_type_import }};
 {%- endif %}
 {%- if http_function -%}
 use lambda_http::{run, service_fn, tracing, Body, Error, Request, RequestExt, Response};
-{%- else -%}
+{%- else %}
 use lambda_runtime::{run, service_fn, tracing, Error, LambdaEvent};
 {% endif %}
 {% if basic_example -%}
