@@ -16,7 +16,11 @@ edition = "2021"
 
 [dependencies]
 {% if event_type_import -%}
+{% if event_type_import == "serde_json::Value" -%}
+serde_json = "1"
+{% else -%}
 aws_lambda_events = { version = "{{ aws_lambda_events_version | default: "0.15.0" }}", default-features = false, features = ["{{ event_type_feature }}"] }
+{% endif -%}
 {% endif -%}
 {% if http_function -%}
 {%- if http_feature -%}
