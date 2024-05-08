@@ -24,9 +24,9 @@ aws_lambda_events = { version = "{{ aws_lambda_events_version | default: "0.15.1
 {% endif -%}
 {% if http_function -%}
 {%- if http_feature -%}
-lambda_http = { version = "{{ lambda_http_version | default: "0.11.2" }}", default-features = false, features = ["{{ http_feature }}", "tracing"] }
+lambda_http = { version = "{{ lambda_http_version | default: "0.11.1" }}", default-features = false, features = ["{{ http_feature }}", "tracing"] }
 {%- else -%}
-lambda_http = "{{ lambda_http_version | default: "0.11.2" }}"
+lambda_http = "{{ lambda_http_version | default: "0.11.1" }}"
 {%- endif -%}
 {%- endif %}
 {% if http_function != true -%}
